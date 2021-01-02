@@ -1,17 +1,11 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+// Components
+import Home from "components/home"
+import NotLogged from "components/auth/notLogged"
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Tweeter. Esto es lo que esta pasando</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+const logged = false;
 
-      <main className={styles.main}></main>
+export default function HomeView() {
 
-      <footer className={styles.footer}></footer>
-    </div>
-  )
+  return logged ? <Home/> : <NotLogged />
+
 }
