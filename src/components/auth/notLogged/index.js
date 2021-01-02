@@ -30,7 +30,7 @@ export default function NotLogged(){
                         </Link>
 
                         <Link href="/login">
-                            <a className={styles.btnoutline}>Iniciar sesion</a>
+                            <a className={styles.btnoutline}>Iniciar sesión</a>
                         </Link>
 
 

@@ -1,3 +1,5 @@
-export default function Register(){
-    return <p>Register work´s</p>   
+import Register from "components/auth/register"
+
+export default function RegisterView(){
+    return <Register/>
 }
