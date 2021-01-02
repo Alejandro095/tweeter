@@ -1,0 +1,143 @@
+.layout {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(21, 32, 43);
+  color: white;
+  font-weight: 300;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+
+  & > div {
+    flex: 1;
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.left {
+  background-color: lighten($color: #2f80ed, $amount: 4);
+  background-image: url('/tweeter-small.svg');
+
+  background-repeat: no-repeat;
+  background-size: 60rem;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.titleleft {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+
+  & svg {
+    margin-right: 2rem;
+    font-size: 2rem;
+  }
+}
+
+.titleleft:nth-child(1) svg {
+  position: relative;
+  top: 3px;
+}
+
+.titleleft:nth-child(even) {
+  margin: 2rem 0;
+  display: flex;
+  line-height: 2rem;
+  & svg {
+    align-self: flex-start;
+    position: relative;
+    top: 3px;
+  }
+}
+
+.titleleft:nth-child(3) svg {
+  position: relative;
+  top: 3px;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & img {
+    align-self: start;
+  }
+}
+
+.information {
+  max-width: 24rem;
+
+  overflow-wrap: break-word;
+
+  & > h3 {
+    font-size: 2rem;
+  }
+
+  & > h2 {
+    font-weight: 300;
+    font-size: 1.25rem;
+  }
+
+  & > a:last-child {
+    margin: 1rem 0 0 0;
+  }
+}
+
+.footer {
+  font-size: 0.75rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  background-color: #2f80ed;
+  display: block;
+  font-weight: 400;
+  padding: 0.5125rem 1.125rem;
+  border-radius: 10000rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnoutline {
+  color: #2f80ed;
+  background-color: transparent;
+  border: #2f80ed 1px solid;
+  display: block;
+  font-weight: 400;
+  padding: 0.5125rem 1.125rem;
+  border-radius: 10000rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.12s ease;
+}
+
+.btn:hover {
+  background-color: darken($color: #2f80ed, $amount: 10);
+}
+.btnoutline:hover {
+  background-color: lighten($color: #15202b, $amount: 4);
+}
