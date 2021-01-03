@@ -1,6 +1,10 @@
 import styles from "./styles.module.scss"
 
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import GroupIcon from '@material-ui/icons/Group';
+import SettingsIcon from '@material-ui/icons/Settings';
+import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
 
 // Next Components
 import Link from 'next/link'
@@ -53,11 +57,24 @@ export default function HeaderApp({children}){
                         <ArrowDropDownIcon/>
 
                         <div className={visible ? styles.popactive : styles.popnoactive}>
-                           <ul>
-                               <li></li>
-                               <li></li>
-                               <li></li>
-                               <li></li>
+                           <ul className={styles.dropmenu}>
+                               <li>
+                                   <AccountCircleIcon/>
+                                   <span>Perfil</span>
+                               </li>
+                               <li>
+                                   <GroupIcon/>
+                                   <span>Chat</span>
+                               </li>
+                               <li>
+                                   <SettingsIcon/>
+                                   <span>Configuración</span>
+                               </li>
+                               <hr/>
+                               <li>
+                                   <ExitToAppOutlinedIcon/>
+                                   <span>Cerrar sesión</span>
+                               </li>
                            </ul>
                         </div>
                     </div>

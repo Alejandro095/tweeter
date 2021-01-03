@@ -107,7 +107,7 @@
   top: 120%;
 
   border-radius: 1rem;
-  padding: 0.25rem;
+  padding: 1rem;
 }
 
 .popactive {
@@ -118,4 +118,40 @@
 .popnoactive {
   @extend .pop;
   display: none;
+}
+
+.dropmenu {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Noto Sans';
+  font-weight: 700;
+  font-size: 0.85rem;
+
+  & > hr {
+    margin: 0.5rem 0;
+    border: 1px solid #e0e0e0;
+  }
+
+  & > li {
+    width: 100%;
+    display: flex;
+    padding: 1rem 0.125rem;
+
+    & > svg {
+      margin: 0rem 0.5rem;
+    }
+
+    & > span {
+      flex: 1;
+    }
+  }
+}
+
+.dropmenu > li:last-child {
+  color: #eb5757;
+}
+
+.dropmenu > li:hover {
+  background-color: #15202b;
+  border-radius: 0.85rem;
 }
