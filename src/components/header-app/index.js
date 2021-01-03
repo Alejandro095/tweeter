@@ -91,9 +91,9 @@ export default function HeaderApp({children}){
 
             </header>
 
-            <main className={styles.main}>
+            <div className={styles.main}>
                 {children}
-            </main>
+            </div>
         </div>
     )
 }

@@ -1,5 +1,5 @@
-import HeaderApp from "components/header-app";
+import Settings from "components/settings/home"
 
 export default function SettingsView() {
-  return <HeaderApp> Settings work´s </HeaderApp>
+  return <Settings/>
 }
