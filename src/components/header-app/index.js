@@ -11,7 +11,6 @@ import Link from 'next/link'
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-
 export default function HeaderApp({children}){
 
     const router = useRouter();
@@ -60,20 +59,28 @@ export default function HeaderApp({children}){
                            <ul className={styles.dropmenu}>
                                <li>
                                    <AccountCircleIcon/>
-                                   <span>Perfil</span>
+                                    <Link href="/">
+                                        <a>Perfil</a>
+                                    </Link>
                                </li>
                                <li>
-                                   <GroupIcon/>
-                                   <span>Chat</span>
+                                    <GroupIcon/>
+                                    <Link href="/messages">
+                                       <a>Mensajes</a>
+                                    </Link>
                                </li>
                                <li>
                                    <SettingsIcon/>
-                                   <span>Configuración</span>
+                                   <Link href="/settings">
+                                        <a>Configuración</a>
+                                    </Link>
                                </li>
                                <hr/>
                                <li>
                                    <ExitToAppOutlinedIcon/>
-                                   <span>Cerrar sesión</span>
+                                    <Link href="/">
+                                        <a>Cerrar sesión</a>
+                                    </Link>
                                </li>
                            </ul>
                         </div>

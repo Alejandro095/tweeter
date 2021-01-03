@@ -1,3 +1,5 @@
-export default function Settings(){
-    return <p>Settings work´s</p>   
+import HeaderApp from "components/header-app";
+
+export default function SettingsView() {
+  return <HeaderApp> Settings work´s </HeaderApp>
 }
