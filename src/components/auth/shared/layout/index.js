@@ -17,12 +17,12 @@ export default function Layout({children}) {
 
                 <form className={styles.form} method="POST" action="">
 
-                    <label for="name" className={styles.label}>
+                    <label htmlFor="name" className={styles.label}>
                         <EmailOutlinedIcon/>
                         <input type="text" id="name" className={styles.input} placeholder="Correo"></input>
                     </label>
 
-                    <label for="passowrd" className={styles.label}>
+                    <label htmlFor="passowrd" className={styles.label}>
                         <LockOutlinedIcon/>
                         <input type="password" id="password" className={styles.input} placeholder="Contraseña"></input>
                     </label>
