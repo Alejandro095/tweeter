@@ -2,7 +2,7 @@
 import Home from "components/home"
 import NotLogged from "components/auth/notLogged"
 
-const logged = true;
+const logged = false;
 
 export default function HomeView() {
 
