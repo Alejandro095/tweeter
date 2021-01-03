@@ -42,10 +42,14 @@
     justify-content: center;
     align-items: center;
     width: 20rem;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
   }
 
-  & > .userinfo {
-    flex: 1;
+  & .userinfo {
+    // flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -63,8 +67,55 @@
 
 .userinfo {
   cursor: pointer;
+  position: relative;
+
   & > img {
     width: 2rem;
+    height: 2rem;
     border-radius: 0.25rem;
   }
+
+  & > p {
+    margin: 0 1rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+}
+.userinfo {
+  // flex-basis: 14rem;
+  // flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containeruser {
+  flex: 1;
+  display: flex;
+}
+
+.space {
+  flex: 1;
+}
+
+.pop {
+  background-color: darken($color: #15202b, $amount: 6);
+  position: absolute;
+  // width: 14rem;
+  right: 0;
+  left: 0;
+  top: 120%;
+
+  border-radius: 1rem;
+  padding: 0.25rem;
+}
+
+.popactive {
+  @extend .pop;
+  display: flex;
+}
+
+.popnoactive {
+  @extend .pop;
+  display: none;
 }

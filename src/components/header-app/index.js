@@ -5,11 +5,13 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 // Next Components
 import Link from 'next/link'
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 
 export default function HeaderApp({children}){
 
     const router = useRouter();
+    const [visible, setVisble] = useState(false);
 
     return (
         <div className={styles.container}>
@@ -39,11 +41,30 @@ export default function HeaderApp({children}){
 
                     </ul>
                 </nav>
-                <div className={styles.userinfo}>
-                    <img src="profile.jpg" />
-                    <p>Alejandro Tovar</p>
-                    <ArrowDropDownIcon/>
+
+
+                <div className={styles.containeruser}>
+
+                    <div className={styles.space}/>
+
+                    <div className={styles.userinfo} onClick={()=> setVisble(!visible)}>
+                        <img src="profile.jpg" />
+                        <p>Alejandro Tovar</p>
+                        <ArrowDropDownIcon/>
+
+                        <div className={visible ? styles.popactive : styles.popnoactive}>
+                           <ul>
+                               <li></li>
+                               <li></li>
+                               <li></li>
+                               <li></li>
+                           </ul>
+                        </div>
+                    </div>
+
+
                 </div>
+
             </header>
 
             <main className={styles.main}>
