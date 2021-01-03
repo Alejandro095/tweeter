@@ -59,7 +59,7 @@ export default function HeaderApp({children}){
                            <ul className={styles.dropmenu}>
                                <li>
                                    <AccountCircleIcon/>
-                                    <Link href="/">
+                                    <Link href="/alejandro">
                                         <a>Perfil</a>
                                     </Link>
                                </li>

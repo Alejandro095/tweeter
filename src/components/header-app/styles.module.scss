@@ -13,6 +13,7 @@
   position: sticky;
   height: 4.25rem;
   top: 0;
+  z-index: 10;
 
   & > .logo {
     flex: 1;
