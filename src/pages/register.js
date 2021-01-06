@@ -1,5 +1,5 @@
-import Register from "@views/auth/register"
+import AuthRegisterView from "@views/auth-register"
 
-export default function RegisterView(){
-    return <Register/>
+export default function RegisterPage(){
+    return <AuthRegisterView/>
 }
