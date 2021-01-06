@@ -1,3 +1,9 @@
+import SettingsEditView from "@views/settings-edit"
+
 export default function Edit(){
-    return <p>Settings / Edit work´s</p>   
+    return (
+        <SettingsEditView>
+            <p>Settings / Edit work´s</p>
+        </SettingsEditView>
+    )
 }

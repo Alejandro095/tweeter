@@ -1,5 +1,5 @@
-import HeaderApp from "components/header-app";
+import Header from "@layout/header";
 
 export default function MessagesView() {
-  return <HeaderApp> Messages work´s </HeaderApp>
+  return <Header> Messages work´s </Header>
 }

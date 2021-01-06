@@ -8,7 +8,7 @@ import ChatBubbleIcon from '@material-ui/icons/ChatBubbleOutline';
 // Next Components
 import Link from 'next/link'
 
-export default function NotLogged(){
+export default function AuthNotLoggedView(){
     return (
         <div className={styles.layout}>
             <main className={styles.main}>

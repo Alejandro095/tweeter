@@ -1,6 +1,6 @@
 // Components
-import Home from "components/home"
-import NotLogged from "components/auth/notLogged"
+import Home from "@views/home"
+import NotLogged from "@views/auth-not-logged"
 
 const logged = true;
 

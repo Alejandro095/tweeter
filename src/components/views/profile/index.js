@@ -1,9 +1,9 @@
-import HeaderApp from "components/header-app"
+import Layout from "@layout/base"
 import styles from "./styles.module.scss"
 
-export default function Profile() {
+export default function ProfileView() {
     return (
-        <HeaderApp>
+        <Layout>
             <div className={styles.banner}>
                 <div className={styles.information}>
                     <img className={styles.avatar} src="profile.jpg" />
@@ -50,6 +50,6 @@ Fusce ultrices lobortis quam, vel sollicitudin purus imperdiet vel. Mauris digni
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pulvinar arcu at ipsum aliquet, quis sagittis orci tristique. Aenean neque nulla, porttitor ut eleifend ut, porta ut eros. Sed tristique finibus turpis sit amet aliquam. Nam ultricies, ipsum eget varius semper, justo velit ultrices mi, eget bibendum ex odio commodo ex. Donec auctor arcu libero, pulvinar tincidunt ante tempus sit amet. Praesent et lectus interdum, consequat arcu ut, dapibus purus. Pellentesque volutpat sollicitudin venenatis. Proin ut laoreet massa. Vestibulum dapibus pharetra porta.
             </div>
-        </HeaderApp>
+        </Layout>
     )
 }

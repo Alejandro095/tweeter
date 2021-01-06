@@ -11,14 +11,12 @@ import Link from 'next/link'
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-export default function HeaderApp({children}){
+export default function HeaderLayout({children}){
 
     const router = useRouter();
     const [visible, setVisble] = useState(false);
 
-    return (
-        <div className={styles.container}>
-            <header className={styles.header}>
+    return ( <header className={styles.header}>
                 <div className={styles.logo}>
                     <img src="/tweeter-light.svg"/>
                 </div>
@@ -51,7 +49,7 @@ export default function HeaderApp({children}){
                     <div className={styles.space}/>
 
                     <div className={styles.userinfo} onClick={()=> setVisble(!visible)}>
-                        <img src="profile.jpg" />
+                        <img src="/profile.jpg" />
                         <p>Alejandro Tovar</p>
                         <ArrowDropDownIcon/>
 
@@ -90,10 +88,5 @@ export default function HeaderApp({children}){
                 </div>
 
             </header>
-
-            <div className={styles.main}>
-                {children}
-            </div>
-        </div>
     )
 }

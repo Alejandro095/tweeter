@@ -1,9 +1,9 @@
-import HeaderApp from "components/header-app"
+import Layout from "@layout/base"
 import styles from "./styles.module.scss"
 
-export default function Home() {
+export default function HomeView() {
     return (
-        <HeaderApp>
+        <Layout>
         <p className={styles.p}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus congue blandit aliquam. Integer posuere ipsum nisl, et feugiat lorem scelerisque maximus. Etiam vel lacinia neque. Vivamus ipsum felis, iaculis ut commodo ut, blandit eu lectus. Donec vitae aliquam velit, in feugiat arcu. Phasellus ac tristique turpis. Integer eu tortor ac elit dictum accumsan in ac augue. Donec eget odio eu dolor efficitur blandit. Sed quis est vehicula justo varius condimentum. Nunc ut dolor et enim sodales dapibus. Sed eget tortor ullamcorper, laoreet nisi nec, dignissim elit.
 
 Nunc commodo condimentum arcu, in maximus dolor commodo ac. In pulvinar pretium lorem tempus egestas. Nullam porttitor magna nibh, dignissim volutpat quam mollis id. Aliquam dignissim eget justo nec tincidunt. Suspendisse potenti. Sed risus libero, fringilla id venenatis ac, blandit sed risus. In pretium, ligula nec feugiat posuere, ante est viverra risus, vitae sagittis lorem libero at nibh. Nullam leo eros, placerat id dolor pharetra, dictum sollicitudin urna. Suspendisse tristique nisi sem.
@@ -43,6 +43,6 @@ Praesent ut consequat justo. Donec malesuada tellus scelerisque lacinia cursus. 
 Quisque ut elementum ligula. Proin vestibulum, turpis id lobortis vulputate, ligula velit commodo nibh, non rhoncus justo nulla ac nisi. Pellentesque vel condimentum diam, sagittis aliquam felis. Quisque varius risus posuere fermentum faucibus. Phasellus et euismod odio. Nullam sem nibh, posuere a sapien ut, viverra iaculis enim. Nunc venenatis vehicula enim vel placerat. Donec congue posuere risus, facilisis tincidunt sapien suscipit et. Integer eu tristique est, quis fermentum augue. Duis pharetra in tortor vitae gravida. In hac habitasse platea dictumst.
 
 Curabitur quis faucibus sem. In bibendum nec est nec eleifend. Morbi lobortis sem mi, ut malesuada justo ultrices vitae. Suspendisse convallis efficitur purus consectetur blandit. Phasellus et tempus sapien. Etiam sem enim, feugiat pulvinar massa et, egestas imperdiet nibh. Praesent blandit placerat risus, et iaculis erat aliquam ut. Aliquam sodales arcu ac pulvinar varius. Pellentesque iaculis ligula nec nisi efficitur posuere. Nunc ex quam, cursus vel dolor eu, eleifend tincidunt neque. Ut eu lacinia elit. Suspendisse tellus nisl, semper et mi et, molestie semper ante. Etiam vitae nulla commodo, vestibulum sapien sed, fringilla magna. In sit amet lectus accumsan, eleifend nunc sit amet, sollicitudin nisl.</p>
-        </HeaderApp>
+        </Layout>
     )
 }

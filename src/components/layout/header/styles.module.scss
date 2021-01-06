@@ -1,0 +1,159 @@
+.container {
+  width: 100%;
+  height: 100%;
+
+  background-color: #15202b;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  background-color: darken($color: #15202b, $amount: 6);
+  padding: 0rem 5rem;
+  position: sticky;
+  height: 4.25rem;
+  top: 0;
+  z-index: 10;
+
+  & > .logo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  & ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+  }
+
+  & li {
+    flex: 1;
+    height: 4.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & > nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  & .userinfo {
+    // flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.main {
+  min-height: calc(100vh - 4.25rem);
+}
+
+.active {
+  color: #2f80ed;
+  border-bottom: #2f80ed 2px solid;
+}
+
+.userinfo {
+  cursor: pointer;
+  position: relative;
+
+  & > img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.25rem;
+  }
+
+  & > p {
+    margin: 0 1rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+}
+.userinfo {
+  // flex-basis: 14rem;
+  // flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containeruser {
+  flex: 1;
+  display: flex;
+}
+
+.space {
+  flex: 1;
+}
+
+.pop {
+  background-color: darken($color: #15202b, $amount: 6);
+  position: absolute;
+  // width: 14rem;
+  right: 0;
+  left: 0;
+  top: 120%;
+
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.popactive {
+  @extend .pop;
+  display: flex;
+}
+
+.popnoactive {
+  @extend .pop;
+  display: none;
+}
+
+.dropmenu {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Noto Sans';
+  font-weight: 700;
+  font-size: 0.85rem;
+
+  & > hr {
+    margin: 0.5rem 0;
+    border: 1px solid #e0e0e0;
+  }
+
+  & > li {
+    width: 100%;
+    display: flex;
+    padding: 0.75rem 0.125rem;
+    justify-content: flex-start;
+
+    & > svg {
+      margin: 0rem 0.5rem;
+    }
+
+    & > span {
+      flex: 1;
+    }
+  }
+}
+
+.dropmenu > li:last-child {
+  color: #eb5757;
+}
+
+.dropmenu > li:hover {
+  background-color: #15202b;
+  border-radius: 0.85rem;
+}

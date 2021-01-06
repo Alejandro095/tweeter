@@ -1,5 +1,5 @@
-import HeaderApp from "components/header-app";
+import Layout from "@layout/base";
 
 export default function ExplorerView() {
-  return <HeaderApp> Explorer work´s </HeaderApp>
+  return <Layout> Explorer work´s </Layout>
 }

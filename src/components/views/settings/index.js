@@ -1,11 +1,11 @@
-import HeaderApp from "components/header-app"
+import Layout from "@layout/base"
 import styles from "./styles.module.scss"
 
 import Link from 'next/link'
 
-export default function Settings() {
+export default function SettingsView() {
     return (
-        <HeaderApp>
+        <Layout>
             <main className={styles.main}>
                 <p className={styles.title}>Información personal</p>
                 <p>Información basica, como tu nombre y foto</p>
@@ -35,6 +35,6 @@ export default function Settings() {
                     <div>CONTRASEÑA</div>
                 </div>
             </main>
-        </HeaderApp>
+        </Layout>
     )
 }

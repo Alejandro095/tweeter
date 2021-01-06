@@ -1,5 +1,5 @@
-import HeaderApp from "components/header-app";
+import Layout from "@layout/base";
 
 export default function BookmarksView() {
-  return <HeaderApp> Bookmars work´s </HeaderApp>
+  return <Layout> Bookmars work´s </Layout>
 }
