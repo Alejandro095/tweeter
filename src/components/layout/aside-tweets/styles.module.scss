@@ -1,0 +1,19 @@
+.container {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 1.5rem; // 1.5rem
+  display: flex;
+}
+
+.tweets {
+  margin-left: 1.5rem;
+}
+
+.tweetsReverse {
+  margin-right: 1.5rem;
+}
+
+.containerReverse {
+  @extend .container;
+  flex-direction: row-reverse;
+}
