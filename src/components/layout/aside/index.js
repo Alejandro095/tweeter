@@ -8,11 +8,10 @@ export default function Aside({children}){
     const stylesChildren = {
         backgroundColor:"var(--secondary-color)",
         borderRadius: "var(--border-radius)",
-        marginBottom: "1rem",
-        padding:"1rem"
+        marginBottom: "1.5rem"
     };
 
-    if(children.type != "div" ) {
+    if( typeof children.type == "symbol" ) {
         return (
         
             <div className={styles.layout}>
@@ -22,11 +21,21 @@ export default function Aside({children}){
                  </div>
             </div>
         )
-    } else {
+    } else if (typeof children.type == "string") {
         return (
             <div className={styles.layout}>
                 <div className={styles.container}>    
                     <aside>{Children.map(children, (child) => cloneElement(child, {style: stylesChildren})) }</aside>
+                    <Footer/>
+                 </div>
+            </div>
+        )
+    } else {
+        const AsideRender = children.type;
+        return (
+            <div className={styles.layout}>
+                <div className={styles.container}>    
+                    <aside> <AsideRender {...children.props} /> </aside>
                     <Footer/>
                  </div>
             </div>
