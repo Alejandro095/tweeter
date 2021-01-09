@@ -8,12 +8,14 @@ import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
 
 // Next Components
 import Link from 'next/link'
-import { useRouter } from "next/router";
+
 import { useState } from "react";
+import isSameUrl from "hooks/is-same-url";
 
 export default function HeaderLayout({children}){
 
-    const router = useRouter();
+    const checkUrl = isSameUrl()
+    
     const [visible, setVisble] = useState(false);
 
     return ( <header className={styles.header}>
@@ -22,19 +24,19 @@ export default function HeaderLayout({children}){
                 </div>
                 <nav>
                     <ul>
-                        <li className={router.pathname == "/" ? styles.active : ""}>
+                        <li className={checkUrl("/") ? styles.active : ""}>
                             <Link href="/">
                                 <a>Inicio</a>
                             </Link>
                         </li>
 
-                        <li className={router.pathname == "/explorer" ? styles.active : ""}>
+                        <li className={checkUrl("/explorer") ? styles.active : ""}>
                             <Link href="/explorer">
                                 <a>Explorar</a>
                             </Link>
                         </li>
 
-                        <li className={router.pathname == "/bookmarks" ? styles.active : ""}>
+                        <li className={checkUrl("/bookmarks") ? styles.active : ""}>
                             <Link href="/bookmarks">
                                 <a>Marcadores</a>
                             </Link>
@@ -58,9 +60,9 @@ export default function HeaderLayout({children}){
                                <li>
                                    <AccountCircleIcon/>
                                     <Link href={{
-                                        pathname: "/[user]",
+                                        pathname: "/[profile]",
                                         query: {
-                                            user: "alejandro"
+                                            profile: "alejandro"
                                         }
                                     }}>
                                         <a>Perfil</a>

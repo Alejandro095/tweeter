@@ -1,0 +1,23 @@
+.container {
+  background-color: var(--secondary-color);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 1rem;
+}
+
+.normalize {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  & > li {
+    padding: 1.25rem 1rem;
+  }
+}
+
+.active {
+  border-left: #2f80ed 2px solid;
+  color: #2f80ed;
+}
