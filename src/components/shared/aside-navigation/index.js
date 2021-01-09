@@ -11,7 +11,7 @@ export default function AsideNavigation({ routes, query }) {
             <ul className={styles.normalize}>
                 {routes.map( ({ title, pathname }, index) => (
                     <li key={index} className={checkUrl(pathname, true) ? styles.active : ""}>
-                        <Link pathname={pathname} title={title} query={query} />
+                        <Link pathname={pathname} title={title} query={query} scroll={false} />
                     </li>
                 ))}
             </ul>

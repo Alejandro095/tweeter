@@ -1,6 +1,6 @@
 .banner {
   width: 100%;
-  height: 30vh;
+  height: 31rem;
 
   background: {
     image: url('/banner.jpg');
@@ -15,13 +15,14 @@
 }
 
 .information {
-  width: 75%;
-  height: 18vh;
+  width: 60%;
+  min-width: 980px;
+  // height: 18vh;
   background-color: var(--secondary-color);
   border-radius: 1rem;
   //   z-index: 1000;
   position: relative;
-  bottom: -40%;
+  bottom: -7.125rem;
 
   display: flex;
 
@@ -34,11 +35,53 @@
   border-radius: 0.5rem;
   border: 0.25rem solid var(--secondary-color);
 
-  position: relative;
-  top: -40%;
+  position: absolute;
+  top: -20%;
+}
+
+.avatarlayer {
+  width: 9.5rem;
 }
 
 .data {
   padding-left: 1.25rem;
   flex: 1;
+}
+
+.userinformation {
+  display: flex;
+
+  align-items: center;
+
+  & p {
+    margin: 0;
+  }
+}
+
+.name {
+  font-family: 'Poppins';
+  font-size: 1.5rem;
+}
+
+.username {
+  color: darken($color: white, $amount: 14);
+}
+
+.personal {
+  display: flex;
+  font-family: 'Poppins';
+  flex: 1;
+
+  & > p:first-child {
+    margin: 0 2rem;
+  }
+
+  & p > span {
+    font-family: 'Noto Sans';
+    color: darken($color: white, $amount: 14);
+  }
+}
+
+.bio {
+  // color: darken($color: white, $amount: 14);
 }

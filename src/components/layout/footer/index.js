@@ -2,13 +2,13 @@ import styles from "./styles.module.scss"
 
 export default function Footer(){
     return (
-        <div>
-            Condiciones de Servicio
+        <footer className={styles.footer}>
+            Condiciones de Servicio 
             Política de Privacidad
             Política de cookies
             Información de anuncios
-            Más opciones
+            <br/> Más opciones
             © 2021 Tweeter, Inc.
-        </div>
+        </footer>
     )
 }
