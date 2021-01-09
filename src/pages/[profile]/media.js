@@ -2,6 +2,6 @@ import ProfileView from "@views/profile";
 
 export default function ProfileMediaPage() {
   return (
-    <ProfileView />
+    <ProfileView content="Profile / Media wok´s" />
   )
 }

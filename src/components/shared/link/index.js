@@ -1,10 +1,7 @@
 import LinkNext from 'next/link'
-import { useRouter } from "next/router"
 
 
-export default function Link({ pathname, title }) {
-
-    const { query } = useRouter()
+export default function Link({ pathname, query, title }) {
 
     return (
         <LinkNext href={{pathname, query}}> 

@@ -2,6 +2,6 @@ import ProfileView from "@views/profile";
 
 export default function ProfileRepliesPage() {
   return (
-    <ProfileView />
+    <ProfileView content="Profile / Replies wok´s" />
   )
 }

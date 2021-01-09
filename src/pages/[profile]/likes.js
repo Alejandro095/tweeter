@@ -2,6 +2,6 @@ import ProfileView from "@views/profile";
 
 export default function ProfileLikesPage() {
   return (
-    <ProfileView />
+    <ProfileView content="Profile / Likes wok´s" />
   )
 }
