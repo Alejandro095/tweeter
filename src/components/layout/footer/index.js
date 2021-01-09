@@ -4,11 +4,11 @@ export default function Footer(){
     return (
         <div>
             Condiciones de Servicio
-Política de Privacidad
-Política de cookies
-Información de anuncios
-Más opciones
-© 2021 Twitter, Inc.
+            Política de Privacidad
+            Política de cookies
+            Información de anuncios
+            Más opciones
+            © 2021 Tweeter, Inc.
         </div>
     )
 }

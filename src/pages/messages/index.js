@@ -1,5 +1,5 @@
-import Header from "@layout/header";
+import Layout from "@layout/base";
 
-export default function MessagesView() {
-  return <Header> Messages work´s </Header>
+export default function MessagesPage() {
+  return <Layout> Messages work´s </Layout>
 }

@@ -14,9 +14,9 @@ export default function AsideTweets({ aside, tweets, comment, reverse }){
             
             {comment ? <section>{comment()}</section> : "" } 
 
-            <section>
+            <div>
                 {tweets()}
-            </section>
+            </div>
         </div>
 
     </div>

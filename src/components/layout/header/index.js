@@ -57,7 +57,12 @@ export default function HeaderLayout({children}){
                            <ul className={styles.dropmenu}>
                                <li>
                                    <AccountCircleIcon/>
-                                    <Link href="/alejandro">
+                                    <Link href={{
+                                        pathname: "/[user]",
+                                        query: {
+                                            user: "alejandro"
+                                        }
+                                    }}>
                                         <a>Perfil</a>
                                     </Link>
                                </li>
