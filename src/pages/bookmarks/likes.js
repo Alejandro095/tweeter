@@ -1,5 +1,5 @@
-import BookmarksView from "@views/bookmarks"
+import BookmarksView from "@views/bookmarks";
 
 export default function BookmarksPage() {
-  return <BookmarksView />
+  return <BookmarksView />;
 }

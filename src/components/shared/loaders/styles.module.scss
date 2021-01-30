@@ -1,0 +1,20 @@
+// Loader
+.spinner {
+  border-left-color: transparent !important;
+  border-bottom-color: transparent !important;
+  // border-right-color: transparent;
+
+  border-radius: 50%;
+
+  animation: spin 0.65s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

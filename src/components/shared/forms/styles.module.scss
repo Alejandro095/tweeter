@@ -1,0 +1,121 @@
+.input {
+  width: 100%;
+  min-height: 3rem;
+
+  color: #828282;
+
+  padding: 0 0.75rem;
+
+  border-radius: 0.5rem;
+  background-color: darken($color: #15202b, $amount: 6);
+
+  border: 1px solid rgb(21, 32, 43);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & input {
+    min-height: 2rem;
+
+    color: white;
+
+    font-weight: 400;
+    font-family: "Noto Sans";
+    font-size: 1rem;
+
+    flex: 1;
+    border: none;
+
+    outline: none;
+    background-color: transparent;
+
+    margin-left: 0.75rem;
+  }
+
+  & svg {
+    width: 1.25rem;
+    fill: #2f80ed;
+  }
+}
+
+.input > input::placeholder {
+  color: darken($color: white, $amount: 10);
+
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+// Input succes
+.inputSuccess {
+  @extend .input;
+
+  color: #27ae60;
+
+  border-color: #27ae60;
+
+  & input {
+    color: #27ae60;
+  }
+
+  & svg {
+    fill: #27ae60;
+  }
+}
+
+// Input Error
+.inputError {
+  @extend .input;
+
+  color: #eb5757;
+
+  border-color: #eb5757;
+
+  & input {
+    color: #eb5757;
+  }
+
+  & svg {
+    fill: #eb5757;
+  }
+}
+
+.inputError > input::placeholder {
+  color: #eb5757;
+
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+.informationError {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #eb5757;
+  margin: 0 0.5rem;
+
+  position: absolute;
+}
+
+// Loader
+.spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #2f80ed;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  // border-right-color: transparent;
+
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

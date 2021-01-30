@@ -1,17 +1,16 @@
 {
-    "compilerOptions": {
-      "baseUrl": "./src",
-      "paths": {
-        // SCSS
-        "@mixins/*": ["sass/mixins/*"],
-        "@functions/*": ["sass/functions/*"],
-        "@variables": ["sass/_variables.scss"],
-        // REACT
-        "@views/*": ["components/views/*"],
-        "@shared/*": ["components/shared/*"],
-        "@layout/*": ["components/layout/*"],
-        "@containers/*": ["components/containers/*"],
-      }
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      // SCSS
+      "@mixins/*": ["sass/mixins/*"],
+      "@functions/*": ["sass/functions/*"],
+      "@variables": ["sass/_variables.scss"],
+      // REACT
+      "@views/*": ["components/views/*"],
+      "@shared/*": ["components/shared/*"],
+      "@layout/*": ["components/layout/*"],
+      "@containers/*": ["components/containers/*"]
     }
   }
-  
+}
