@@ -1,6 +1,6 @@
-import Link from "@shared/link";
-import isSameUrl from "hooks/is-same-url";
-import styles from "./styles.module.scss";
+import Link from '@shared/link';
+import isSameUrl from 'hooks/is-same-url';
+import styles from './styles.module.scss';
 
 export default function AsideNavigation({ routes, query }) {
   const checkUrl = isSameUrl();
@@ -11,7 +11,7 @@ export default function AsideNavigation({ routes, query }) {
         {routes.map(({ title, pathname }, index) => (
           <li
             key={index}
-            className={checkUrl(pathname, true) ? styles.active : ""}
+            className={checkUrl(pathname, true) ? styles.active : ''}
           >
             <Link
               pathname={pathname}

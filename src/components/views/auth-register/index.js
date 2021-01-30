@@ -1,37 +1,37 @@
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
-import Layout from "@layout/auth-layout";
+import Layout from '@layout/auth-layout';
 
-import CloseIcon from "@material-ui/icons/Close";
+import CloseIcon from '@material-ui/icons/Close';
 
-import AlternateEmailIcon from "@material-ui/icons/AlternateEmail";
-import LockIcon from "@material-ui/icons/Lock";
+import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
+import LockIcon from '@material-ui/icons/Lock';
 
-import Link from "@shared/link";
+import Link from '@shared/link';
 
-import Input from "@shared/forms";
+import Input from '@shared/forms';
 
-import { useForm } from "react-hook-form";
-import useFetch from "hooks/use-fetch";
-import { useEffect, useState } from "react";
+import { useForm } from 'react-hook-form';
+import useFetch from 'hooks/use-fetch';
+import { useEffect, useState } from 'react';
 
-import Spinner from "@shared/loaders";
+import Spinner from '@shared/loaders';
 
 const FirstStep = () => {
   const { register, errors, handleSubmit } = useForm();
   const [AJAX, data, isFetching] = useFetch();
 
   const onSubmit = async ({ username, password }) => {
-    AJAX("http://localhost:8000/api/auth/login", {
-      method: "POST",
+    AJAX('http://localhost:8000/api/auth/login', {
+      method: 'POST',
       body: JSON.stringify({
         username: username,
         email: username,
         password: password,
       }),
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
     });
   };
@@ -44,16 +44,16 @@ const FirstStep = () => {
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <Input
           icon={AlternateEmailIcon}
-          name="username"
-          placeholder="Nombre de usuario"
+          name='username'
+          placeholder='Nombre de usuario'
           register={register({
             required: {
               value: true,
-              message: "El nombre de usuario es obligatorio.",
+              message: 'El nombre de usuario es obligatorio.',
             },
             minLength: {
               value: 4,
-              message: "La longitud minima es de 4 caracteres.",
+              message: 'La longitud minima es de 4 caracteres.',
             },
           })}
           errors={errors.username}
@@ -61,13 +61,13 @@ const FirstStep = () => {
 
         <Input
           icon={AlternateEmailIcon}
-          name="email"
-          placeholder="Correo"
+          name='email'
+          placeholder='Correo'
           register={register({
-            required: { value: true, message: "El correo es obligatorio" },
+            required: { value: true, message: 'El correo es obligatorio' },
             minLength: {
               value: 4,
-              message: "La longitud minima es de 4 caracteres.",
+              message: 'La longitud minima es de 4 caracteres.',
             },
           })}
           errors={errors.username}
@@ -75,14 +75,14 @@ const FirstStep = () => {
 
         <Input
           icon={LockIcon}
-          name="password"
-          type="password"
-          placeholder="Password"
+          name='password'
+          type='password'
+          placeholder='Password'
           register={register({
-            required: { value: true, message: "La contraseña es obligatorio." },
+            required: { value: true, message: 'La contraseña es obligatorio.' },
             minLength: {
               value: 4,
-              message: "La longitud minima es de 4 caracteres.",
+              message: 'La longitud minima es de 4 caracteres.',
             },
           })}
           errors={errors.password}
@@ -96,22 +96,22 @@ const FirstStep = () => {
 
         <Input
           icon={LockIcon}
-          name="password"
-          type="password"
-          placeholder="Password"
+          name='password'
+          type='password'
+          placeholder='Password'
           register={register({
-            required: { value: true, message: "La contraseña es obligatorio." },
+            required: { value: true, message: 'La contraseña es obligatorio.' },
             minLength: {
               value: 4,
-              message: "La longitud minima es de 4 caracteres.",
+              message: 'La longitud minima es de 4 caracteres.',
             },
           })}
           errors={errors.password}
         />
 
         <button disabled={isFetching} className={styles.btn}>
-          {" "}
-          {isFetching ? <Spinner color="#e5ecf3" /> : "SIGUIENTE"}{" "}
+          {' '}
+          {isFetching ? <Spinner color='#e5ecf3' /> : 'SIGUIENTE'}{' '}
         </button>
       </form>
     </div>
@@ -123,40 +123,40 @@ const SecondStep = ({ state }) => {
   const [AJAX, data, isFetching] = useFetch();
 
   const onSubmit = async ({ username, password }) => {
-    AJAX("http://localhost:8000/api/auth/login", {
-      method: "POST",
+    AJAX('http://localhost:8000/api/auth/login', {
+      method: 'POST',
       body: JSON.stringify({
         username: username,
         email: username,
         password: password,
       }),
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
     });
   };
 
   return (
-    <div className={state >= 2 ? styles.display : ""}>
+    <div className={state >= 2 ? styles.display : ''}>
       <div className={styles.top}>
         <h1>Te enviamos un codigo de verificación</h1>
       </div>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <span> Introdúcelo abajo para verificar sas21xsa21@hotmail.com </span>
         <Input
-          name="code"
-          placeholder="Codigo"
-          autocomplete="off"
-          type="number"
+          name='code'
+          placeholder='Codigo'
+          autocomplete='off'
+          type='number'
           register={register({
             required: {
               value: true,
-              message: "El nombre de usuario es obligatorio.",
+              message: 'El nombre de usuario es obligatorio.',
             },
             minLength: {
               value: 4,
-              message: "La longitud minima es de 4 caracteres.",
+              message: 'La longitud minima es de 4 caracteres.',
             },
           })}
           errors={errors.username}
@@ -164,8 +164,8 @@ const SecondStep = ({ state }) => {
         <span> Reenviar correo </span>
 
         <button disabled={isFetching} className={styles.btn}>
-          {" "}
-          {isFetching ? <Spinner color="#e5ecf3" /> : "VERIFICAR"}{" "}
+          {' '}
+          {isFetching ? <Spinner color='#e5ecf3' /> : 'VERIFICAR'}{' '}
         </button>
       </form>
     </div>
@@ -177,36 +177,36 @@ const ThirdStep = ({ state }) => {
   const [AJAX, data, isFetching] = useFetch();
 
   const onSubmit = async ({ username, password }) => {
-    AJAX("http://localhost:8000/api/auth/login", {
-      method: "POST",
+    AJAX('http://localhost:8000/api/auth/login', {
+      method: 'POST',
       body: JSON.stringify({
         username: username,
         email: username,
         password: password,
       }),
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
     });
   };
 
   return (
-    <div className={state >= 3 ? styles.display : ""}>
+    <div className={state >= 3 ? styles.display : ''}>
       <div className={styles.top}>
         <h1>Te enviamos un codigo de verificación</h1>
       </div>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <Input
           icon={LockIcon}
-          name="firstname"
-          type="text"
-          placeholder="Nombres"
+          name='firstname'
+          type='text'
+          placeholder='Nombres'
           register={register({
-            required: { value: true, message: "La contraseña es obligatorio." },
+            required: { value: true, message: 'La contraseña es obligatorio.' },
             minLength: {
               value: 4,
-              message: "La longitud minima es de 4 caracteres.",
+              message: 'La longitud minima es de 4 caracteres.',
             },
           })}
           errors={errors.names}
@@ -214,14 +214,14 @@ const ThirdStep = ({ state }) => {
 
         <Input
           icon={LockIcon}
-          name="lastaname"
-          type="text"
-          placeholder="Apellidos"
+          name='lastaname'
+          type='text'
+          placeholder='Apellidos'
           register={register({
-            required: { value: true, message: "La contraseña es obligatorio." },
+            required: { value: true, message: 'La contraseña es obligatorio.' },
             minLength: {
               value: 4,
-              message: "La longitud minima es de 4 caracteres.",
+              message: 'La longitud minima es de 4 caracteres.',
             },
           })}
           errors={errors.password}
@@ -229,22 +229,22 @@ const ThirdStep = ({ state }) => {
 
         <Input
           icon={LockIcon}
-          name="bio"
-          type="textarea"
-          placeholder="Biografia"
+          name='bio'
+          type='textarea'
+          placeholder='Biografia'
           register={register({
-            required: { value: true, message: "La contraseña es obligatorio." },
+            required: { value: true, message: 'La contraseña es obligatorio.' },
             minLength: {
               value: 4,
-              message: "La longitud minima es de 4 caracteres.",
+              message: 'La longitud minima es de 4 caracteres.',
             },
           })}
           errors={errors.bio}
         />
 
         <button disabled={isFetching} className={styles.btn}>
-          {" "}
-          {isFetching ? <Spinner color="#e5ecf3" /> : "SIGUIENTE"}{" "}
+          {' '}
+          {isFetching ? <Spinner color='#e5ecf3' /> : 'SIGUIENTE'}{' '}
         </button>
       </form>
     </div>
@@ -256,63 +256,62 @@ const FourStep = ({ state }) => {
   const [AJAX, data, isFetching] = useFetch();
 
   const onSubmit = async ({ username, password }) => {
-    AJAX("http://localhost:8000/api/auth/login", {
-      method: "POST",
+    AJAX('http://localhost:8000/api/auth/login', {
+      method: 'POST',
       body: JSON.stringify({
         username: username,
         email: username,
         password: password,
       }),
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
     });
   };
 
   return (
-    <div className={state >= 4 ? styles.display : ""}>
+    <div className={state >= 4 ? styles.display : ''}>
       <div className={styles.top}>
         <h1>Agrega una imagen de perfil</h1>
       </div>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <Input
-          name="avatar"
-          placeholder="Avatar"
-          type="file"
+          name='avatar'
+          placeholder='Avatar'
+          type='file'
           register={register({
             required: {
               value: true,
-              message: "El nombre de usuario es obligatorio.",
+              message: 'El nombre de usuario es obligatorio.',
             },
             minLength: {
               value: 4,
-              message: "La longitud minima es de 4 caracteres.",
+              message: 'La longitud minima es de 4 caracteres.',
             },
           })}
           errors={errors.avatar}
         />
 
         <Input
-          name="header"
-          placeholder="header"
-          type="file"
+          name='header'
+          placeholder='header'
+          type='file'
           register={register({
             required: {
               value: true,
-              message: "El nombre de usuario es obligatorio.",
+              message: 'El nombre de usuario es obligatorio.',
             },
             minLength: {
               value: 4,
-              message: "La longitud minima es de 4 caracteres.",
+              message: 'La longitud minima es de 4 caracteres.',
             },
           })}
           errors={errors.header}
         />
 
         <button disabled={isFetching} className={styles.btn}>
-          {" "}
-          {isFetching ? <Spinner color="#e5ecf3" /> : "GUARDAR"}{" "}
+          {isFetching ? <Spinner color='#e5ecf3' /> : 'GUARDAR'}
         </button>
       </form>
     </div>

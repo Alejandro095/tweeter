@@ -1,5 +1,5 @@
-import LinkNext from "next/link";
-import styles from "./styles.module.scss";
+import LinkNext from 'next/link';
+import styles from './styles.module.scss';
 
 export default function Link({ pathname, query, title, scroll = true }) {
   return (

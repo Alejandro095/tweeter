@@ -1,5 +1,5 @@
-import Layout from "@layout/base";
-import styles from "./styles.module.scss";
+import Layout from '@layout/base';
+import styles from './styles.module.scss';
 
 export default function SettingsEditView() {
   return (

@@ -1,6 +1,6 @@
-import Layout from "@layout/base";
-import AsideTweets from "@layout/aside-tweets";
-import styles from "./styles.module.scss";
+import Layout from '@layout/base';
+import AsideTweets from '@layout/aside-tweets';
+import styles from './styles.module.scss';
 
 export default function HomeView() {
   return (

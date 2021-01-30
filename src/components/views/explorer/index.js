@@ -1,12 +1,12 @@
-import Layout from "@layout/base";
-import AsideTweets from "@layout/aside-tweets";
-import AsideNavigation from "@shared/aside-navigation";
+import Layout from '@layout/base';
+import AsideTweets from '@layout/aside-tweets';
+import AsideNavigation from '@shared/aside-navigation';
 
 const routes = [
-  { title: "Top", pathname: "/explorer/top" },
-  { title: "Ultimos", pathname: "/explorer/latest" },
-  { title: "Personas", pathname: "/explorer/people" },
-  { title: "Media", pathname: "/explorer/media" },
+  { title: 'Top', pathname: '/explorer/top' },
+  { title: 'Ultimos', pathname: '/explorer/latest' },
+  { title: 'Personas', pathname: '/explorer/people' },
+  { title: 'Media', pathname: '/explorer/media' },
 ];
 
 export default function ExplorerView() {

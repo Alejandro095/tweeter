@@ -1,6 +1,6 @@
-import "isomorphic-fetch";
+import 'isomorphic-fetch';
 
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function useFetch() {
   const [data, setData] = useState();

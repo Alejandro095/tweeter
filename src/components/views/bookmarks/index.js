@@ -1,16 +1,16 @@
-import Layout from "@layout/base";
-import AsideTweets from "@layout/aside-tweets";
-import AsideNavigation from "@shared/aside-navigation";
+import Layout from '@layout/base';
+import AsideTweets from '@layout/aside-tweets';
+import AsideNavigation from '@shared/aside-navigation';
 
-import ProfileInformation from "@shared/profile-information";
+import ProfileInformation from '@shared/profile-information';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 const routes = [
-  { title: "Tweets", pathname: "/bookmarks" },
-  { title: "Tweets y respuestas", pathname: "/bookmarks/replies" },
-  { title: "Fotos y videos", pathname: "/bookmarks/media" },
-  { title: "Me gusta", pathname: "/bookmarks/likes" },
+  { title: 'Tweets', pathname: '/bookmarks' },
+  { title: 'Tweets y respuestas', pathname: '/bookmarks/replies' },
+  { title: 'Fotos y videos', pathname: '/bookmarks/media' },
+  { title: 'Me gusta', pathname: '/bookmarks/likes' },
 ];
 
 export default function BookmarksView() {

@@ -1,7 +1,7 @@
-import Layout from "@layout/base";
-import styles from "./styles.module.scss";
+import Layout from '@layout/base';
+import styles from './styles.module.scss';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function SettingsView() {
   return (
@@ -18,7 +18,7 @@ export default function SettingsView() {
             </div>
 
             <div>
-              <Link href="/settings/edit">
+              <Link href='/settings/edit'>
                 <a className={styles.btn}>Editar</a>
               </Link>
             </div>

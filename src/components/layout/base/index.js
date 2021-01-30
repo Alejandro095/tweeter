@@ -1,6 +1,6 @@
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
-import Header from "@layout/header";
+import Header from '@layout/header';
 
 export default function Layout({ children }) {
   return (

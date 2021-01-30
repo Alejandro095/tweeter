@@ -1,6 +1,6 @@
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
-export default function Spinner({ size = "1rem", color = "#2f80ed" }) {
+export default function Spinner({ size = '1rem', color = '#2f80ed' }) {
   return (
     <div
       style={{
