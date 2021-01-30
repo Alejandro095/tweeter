@@ -1,12 +1,10 @@
-import styles from './styles.module.scss';
-
-// Iconos / Material UI
-import SearchIcon from '@material-ui/icons/Search';
-import PeopleAltIcon from '@material-ui/icons/PeopleAltOutlined';
 import ChatBubbleIcon from '@material-ui/icons/ChatBubbleOutline';
-
 // Next Components
 import Link from 'next/link';
+import PeopleAltIcon from '@material-ui/icons/PeopleAltOutlined';
+// Iconos / Material UI
+import SearchIcon from '@material-ui/icons/Search';
+import styles from './styles.module.scss';
 
 export default function AuthNotLoggedView() {
   return (
@@ -15,20 +13,20 @@ export default function AuthNotLoggedView() {
         <div className={styles.left}>
           <div>
             <div className={styles.titleleft}>
-              {' '}
-              <SearchIcon /> <span>Sigue lo que te interesa.</span>{' '}
+              
+              <SearchIcon /> <span>Sigue lo que te interesa.</span>
             </div>
             <div className={styles.titleleft}>
-              {' '}
-              <PeopleAltIcon />{' '}
+              
+              <PeopleAltIcon />
               <span>
                 Entérate de qué está hablando la <br /> gente.
-              </span>{' '}
+              </span>
             </div>
             <div className={styles.titleleft}>
-              {' '}
+              
               <ChatBubbleIcon />
-              <span>Únete a la conversación.</span>{' '}
+              <span>Únete a la conversación.</span>
             </div>
           </div>
         </div>

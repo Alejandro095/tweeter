@@ -1,32 +1,27 @@
-import styles from './styles.module.scss';
-
-import Layout from '@layout/auth-layout';
-
-import CloseIcon from '@material-ui/icons/Close';
-
-import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
-import LockIcon from '@material-ui/icons/Lock';
-
-import Link from '@shared/link';
-
-import Input from '@shared/forms';
-
-import { useForm } from 'react-hook-form';
-import useFetch from 'hooks/use-fetch';
+import Input, { InputDate } from '@shared/forms';
 import { useEffect, useState } from 'react';
 
+import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
+import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
+import Layout from '@layout/auth-layout';
+import Link from '@shared/link';
+import LockIcon from '@material-ui/icons/Lock';
+import PersonIcon from '@material-ui/icons/Person';
 import Spinner from '@shared/loaders';
+import styles from './styles.module.scss';
+import useFetch from 'hooks/use-fetch';
+import { useForm } from 'react-hook-form';
 
-const FirstStep = () => {
+const FirstStep = ({ state, setState }) => {
   const { register, errors, handleSubmit } = useForm();
   const [AJAX, data, isFetching] = useFetch();
 
-  const onSubmit = async ({ username, password }) => {
-    AJAX('http://localhost:8000/api/auth/login', {
+  const onSubmit = async ({ username, password, email }) => {
+    AJAX('http://localhost:8000/api/auth/register', {
       method: 'POST',
       body: JSON.stringify({
         username: username,
-        email: username,
+        email: email,
         password: password,
       }),
       headers: {
@@ -36,6 +31,12 @@ const FirstStep = () => {
     });
   };
 
+  useEffect(() => {
+    if(data && data.ok) {
+      setState(state + 1)
+    }
+  }, [data])
+
   return (
     <div>
       <div className={styles.top}>
@@ -43,7 +44,7 @@ const FirstStep = () => {
       </div>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <Input
-          icon={AlternateEmailIcon}
+          icon={PersonIcon}
           name='username'
           placeholder='Nombre de usuario'
           register={register({
@@ -55,6 +56,14 @@ const FirstStep = () => {
               value: 4,
               message: 'La longitud minima es de 4 caracteres.',
             },
+            maxLength: {
+              value: 20,
+              message: 'La longitud maxima es de 20 caracteres.',
+            },
+            pattern: {
+              value: /^[a-zA-Z0-9](_(?!(\.|_))|\.(?!(_|\.))|[a-zA-Z0-9]){2,20}[a-zA-Z0-9]$/,
+              message: "Usuario no valido."
+            }
           })}
           errors={errors.username}
         />
@@ -65,54 +74,68 @@ const FirstStep = () => {
           placeholder='Correo'
           register={register({
             required: { value: true, message: 'El correo es obligatorio' },
-            minLength: {
-              value: 4,
-              message: 'La longitud minima es de 4 caracteres.',
-            },
+            pattern: {
+              value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+              message: "El correo es invalido."
+            }
           })}
-          errors={errors.username}
+          errors={errors.email}
         />
 
         <Input
           icon={LockIcon}
           name='password'
           type='password'
-          placeholder='Password'
+          placeholder='Contraseña'
           register={register({
-            required: { value: true, message: 'La contraseña es obligatorio.' },
+            required: {
+              value: true,
+              message: 'La contraseña es obligatoria.',
+            },
             minLength: {
               value: 4,
-              message: 'La longitud minima es de 4 caracteres.',
+              message: 'La longitud minima es de 6 caracteres.',
             },
+            maxLength: {
+              value: 20,
+              message: 'La longitud maxima es de 16 caracteres.',
+            },
+            pattern: {
+              value: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,16}$/,
+              message: "Debe de contener mayusculas y minisculas, ademas de por lo menos un numero y caracter especial."
+            }
           })}
           errors={errors.password}
         />
 
-        <h2>Fecha de nacimiento</h2>
+        <h2 className={styles.subtitle} >Fecha de nacimiento</h2>
         <p>
           Esta información no será pública. Confirma tu propia edad, incluso si
           esta cuenta es para una empresa, una mascota u otra cosa.
         </p>
 
         <Input
-          icon={LockIcon}
-          name='password'
-          type='password'
-          placeholder='Password'
+          icon={CalendarTodayIcon}
+          name='birthday'
+          type='date'
           register={register({
             required: { value: true, message: 'La contraseña es obligatorio.' },
-            minLength: {
-              value: 4,
-              message: 'La longitud minima es de 4 caracteres.',
+            min: {
+              value: "1950-01-01",
+              message: 'El año minimo es 1950.',
+            },
+            max: {
+              value: "2100-01-01",
+              message: 'El año maximo es 2100.',
             },
           })}
-          errors={errors.password}
+          errors={errors.birthday}
         />
 
         <button disabled={isFetching} className={styles.btn}>
-          {' '}
-          {isFetching ? <Spinner color='#e5ecf3' /> : 'SIGUIENTE'}{' '}
+          {isFetching ? <Spinner color='#e5ecf3' /> : 'SIGUIENTE'}
         </button>
+        
       </form>
     </div>
   );
@@ -122,13 +145,11 @@ const SecondStep = ({ state }) => {
   const { register, errors, handleSubmit } = useForm();
   const [AJAX, data, isFetching] = useFetch();
 
-  const onSubmit = async ({ username, password }) => {
-    AJAX('http://localhost:8000/api/auth/login', {
+  const onSubmit = async ({ code }) => {
+    AJAX('http://localhost:8000/api/auth/verify', {
       method: 'POST',
       body: JSON.stringify({
-        username: username,
-        email: username,
-        password: password,
+        code: code
       }),
       headers: {
         Accept: 'application/json',
@@ -136,6 +157,12 @@ const SecondStep = ({ state }) => {
       },
     });
   };
+
+  useEffect(() => {
+    if(data && data.ok) {
+      setState(state + 1)
+    }
+  }, [data])
 
   return (
     <div className={state >= 2 ? styles.display : ''}>
@@ -164,8 +191,8 @@ const SecondStep = ({ state }) => {
         <span> Reenviar correo </span>
 
         <button disabled={isFetching} className={styles.btn}>
-          {' '}
-          {isFetching ? <Spinner color='#e5ecf3' /> : 'VERIFICAR'}{' '}
+          
+          {isFetching ? <Spinner color='#e5ecf3' /> : 'VERIFICAR'}
         </button>
       </form>
     </div>
@@ -194,7 +221,7 @@ const ThirdStep = ({ state }) => {
   return (
     <div className={state >= 3 ? styles.display : ''}>
       <div className={styles.top}>
-        <h1>Te enviamos un codigo de verificación</h1>
+        <h1>Completa tu perfil</h1>
       </div>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <Input
@@ -243,8 +270,8 @@ const ThirdStep = ({ state }) => {
         />
 
         <button disabled={isFetching} className={styles.btn}>
-          {' '}
-          {isFetching ? <Spinner color='#e5ecf3' /> : 'SIGUIENTE'}{' '}
+          
+          {isFetching ? <Spinner color='#e5ecf3' /> : 'SIGUIENTE'}
         </button>
       </form>
     </div>
@@ -330,15 +357,19 @@ export default function AuthRegisterView() {
 
   return (
     <Layout>
+      
       <div className={styles.container}>
-        <FirstStep state={state} />
-        <SecondStep state={state} />
-        <ThirdStep state={state} />
-        <FourStep state={state} />
+        
+        <FirstStep state={state} setState={setState}/>
+        <SecondStep state={state} setState={setState}/>
+        <ThirdStep state={state} setState={setState}/>
+        <FourStep state={state} setState={setState}/>
+      
       </div>
 
       <button onClick={handleClickAfter}>Anterior</button>
       <button onClick={handleClickNext}>Siguiente</button>
+
     </Layout>
   );
 }

@@ -1,21 +1,20 @@
-import styles from './styles.module.scss';
-
-import Layout from '@layout/auth-layout';
-
-import CloseIcon from '@material-ui/icons/Close';
-
+// Icons
 import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
-import LockIcon from '@material-ui/icons/Lock';
-
-import Link from '@shared/link';
-
+import CloseIcon from '@material-ui/icons/Close';
 import Input from '@shared/forms';
-
-import { useForm } from 'react-hook-form';
-import useFetch from 'hooks/use-fetch';
-import { useEffect } from 'react';
-
+// Layout
+import Layout from '@layout/auth-layout';
+// Shared
+import Link from '@shared/link';
+import LockIcon from '@material-ui/icons/Lock';
 import Spinner from '@shared/loaders';
+// Style
+import styles from './styles.module.scss';
+// React
+import { useEffect } from 'react';
+// Hooks
+import useFetch from 'hooks/use-fetch';
+import { useForm } from 'react-hook-form';
 
 export default function AuthLoginView() {
   const { register, errors, handleSubmit } = useForm();
@@ -81,8 +80,8 @@ export default function AuthLoginView() {
         />
 
         <button disabled={isFetching} className={styles.btn}>
-          {' '}
-          {isFetching ? <Spinner color='#e5ecf3' /> : 'INICIAR SESIÓN'}{' '}
+          
+          {isFetching ? <Spinner color='#e5ecf3' /> : 'INICIAR SESIÓN'}
         </button>
       </form>
 
@@ -103,19 +102,16 @@ export default function AuthLoginView() {
         </div>
       </div>
 
-      <span className={styles.span}>
-        ¿No tienes cuenta?{' '}
-        <span>
-          {' '}
-          <Link title='¡Crea una!' pathname='/register' />{' '}
-        </span>
+      <span className={styles.span}> 
+        ¿No tienes cuenta?
+        <span><Link title='¡Crea una!' pathname='/register' /></span>
       </span>
 
       <span className={styles.span}>
-        {' '}
+        
         <span>
-          {' '}
-          <Link title='¿Olvidaste tu contraseña?' pathname='/register' />{' '}
+          
+          <Link title='¿Olvidaste tu contraseña?' pathname='/register' />
         </span>
       </span>
     </Layout>
